@@ -1,0 +1,27 @@
+@{
+    ViewBag.Title = "World Clock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>World Clock</h2>
+<p>Select a capital city to see the current local time:</p>
+
+@using (Html.BeginForm("WorldClock", "Home", FormMethod.Get))
+{
+    <label for="city">Capital City:</label>
+    @Html.DropDownList("city", (SelectList)ViewBag.CapitalCities, "Select a city", new { id = "city" })
+    <input type="submit" value="Check Time" />
+}
+
+@if (ViewBag.SelectedCity != null && !string.IsNullOrEmpty(ViewBag.SelectedCity.ToString()))
+{
+    <h3>Current time in @ViewBag.SelectedCity:</h3>
+    @if (!string.IsNullOrEmpty(ViewBag.Message))
+    {
+        <p>@ViewBag.Message</p>
+    }
+    else if (ViewBag.LocalTime != null)
+    {
+        <p>@ViewBag.LocalTime</p>
+    }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - WorldTime Website</title>
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>WorldTime Website</h1>
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Stopwatch", "Stopwatch", "Home")</li>
+                <li>@Html.ActionLink("Clock", "Clock", "Home")</li>
+                <li>@Html.ActionLink("World Clock", "WorldClock", "Home")</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <p>&copy; @DateTime.Now.Year - WorldTime Website</p>
+    </div>
+</body>
+</html>

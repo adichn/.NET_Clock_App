@@ -1,0 +1,12 @@
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to the WorldTime Website</h2>
+<p>Select one of the options below:</p>
+<ul>
+    <li>@Html.ActionLink("Stopwatch", "Stopwatch", "Home")</li>
+    <li>@Html.ActionLink("Clock", "Clock", "Home")</li>
+    <li>@Html.ActionLink("World Clock", "WorldClock", "Home")</li>
+</ul>
